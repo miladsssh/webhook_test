@@ -20,8 +20,37 @@ Resources:
       Runtime: go1.x
       Handler: main
       AutoPublishAlias: live
+      Role:
+        Fn::GetAtt: [ MayaLambdaExecutionRole, Arn ]
       DeploymentPreference:
         Type: AllAtOnce
     Environment:
       Variables:
         ENVIRONMENT: !Ref: MyEnvironment
+
+
+  MayaLambdaExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Path: "/"
+      Policies:
+      - PolicyName: MiladTestExecutionRole
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - 'logs:*'
+            - 's3:*'
+            - 'dynamodb:*'
+            - 'kinesis:*'
+            Resource: '*'
