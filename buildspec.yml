@@ -1,0 +1,16 @@
+version: 0.2
+
+# Declaration of environment variables
+env:
+ variables:
+  CODE_BUILD_BUCKET: "codebuild-eu-west-1-104679706903-input-bucket"
+            
+phases:
+  build:
+    commands:
+      - aws cloudformation package --template-file template.yaml --s3-bucket ${CODE_BUILD_BUCKET} --output-template-file outputTemplate.yaml
+artifacts:
+  type: zip
+  files:
+    - template.yaml
+    - outputTemplate.yaml
