@@ -5,7 +5,7 @@ phases:
   install:
     commands:
       # Install golint
-      - github.com/aws/aws-lambda-go/lambda
+      - go get github.com/aws/aws-lambda-go/lambda
 
   build:
     commands:
