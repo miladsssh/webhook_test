@@ -24,4 +24,4 @@ Resources:
         Type: AllAtOnce
     Environment:
       Variables:
-        DEPLOY_ENVIRONMENT: !Ref: MyEnvironment
+        Env1: '{"REGION": "REGION_VALUE", "ENDPOINT": "http://SOME_ENDPOINT"}'
