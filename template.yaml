@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
-Description: 'The hive of Maya'
+Description: 'milad test webhook'
 
 Parameters:
   MyEnvironment:
@@ -20,37 +20,8 @@ Resources:
       Runtime: go1.x
       Handler: main
       AutoPublishAlias: live
-      Role:
-        Fn::GetAtt: [ MiladTestExecutionRoleName, Arn ]
       DeploymentPreference:
         Type: AllAtOnce
     Environment:
       Variables:
         ENVIRONMENT: !Ref: MyEnvironment
-
-
-  MiladTestExecutionRoleName:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-        - Effect: Allow
-          Principal:
-            Service:
-            - lambda.amazonaws.com
-          Action:
-          - sts:AssumeRole
-      Path: "/"
-      Policies:
-      - PolicyName: MiladTestExecutionRole
-        PolicyDocument:
-          Version: '2012-10-17'
-          Statement:
-          - Effect: Allow
-            Action:
-            - 'logs:*'
-            - 's3:*'
-            - 'dynamodb:*'
-            - 'kinesis:*'
-            Resource: '*'
