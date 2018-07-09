@@ -22,6 +22,7 @@ Resources:
       AutoPublishAlias: live
       DeploymentPreference:
         Type: AllAtOnce
-    Environment:
-      Variables:
-        Env1: '{"REGION": "REGION_VALUE", "ENDPOINT": "http://SOME_ENDPOINT"}'
+      Environment:
+        Variables:
+          Env1: '{"REGION": "REGION_VALUE", "ENDPOINT": "http://SOME_ENDPOINT"}'
+          Env2: test
