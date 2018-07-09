@@ -21,7 +21,7 @@ Resources:
       Handler: main
       AutoPublishAlias: live
       Role:
-        Fn::GetAtt: [ MayaLambdaExecutionRole, Arn ]
+        Fn::GetAtt: [ MiladTestExecutionRoleName, Arn ]
       DeploymentPreference:
         Type: AllAtOnce
     Environment:
@@ -29,7 +29,7 @@ Resources:
         ENVIRONMENT: !Ref: MyEnvironment
 
 
-  MayaLambdaExecutionRole:
+  MiladTestExecutionRoleName:
     Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
