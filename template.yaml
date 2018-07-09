@@ -14,7 +14,7 @@ Parameters:
 
 
 Resources:
-  milad_test_webhook:
+  miladTestWebhook:
     Type: 'AWS::Serverless::Function'
     Properties:
       Runtime: go1.x
