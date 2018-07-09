@@ -3,6 +3,7 @@ version: 0.2
 phases:
   build:
     commands:
+      - go build -o main
       - aws cloudformation package --template-file template.yaml --s3-bucket milad-test --output-template-file outputTemplate.yaml
 artifacts:
   type: zip
