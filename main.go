@@ -4,11 +4,12 @@ import (
 	"fmt"
 	"context"
 	"github.com/aws/aws-lambda-go/lambda"
+	"os"
 )
 
 
-func HandleRequest(ctx context.Context) (string, error) {
-	return fmt.Sprintf("Hello world!" ), nil
+func HandleRequest(_ context.Context) (string, error) {
+	return fmt.Sprintf("Hello world from %s!", os.Getenv("MyEnvironment") ), nil
 }
 
 func main() {
