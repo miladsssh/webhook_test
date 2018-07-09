@@ -24,4 +24,4 @@ Resources:
         Type: AllAtOnce
     Environment:
       Variables:
-        ENVIRONMENT: !Ref: MyEnvironment
+        DEPLOY_ENVIRONMENT: !Ref: MyEnvironment
