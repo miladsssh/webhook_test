@@ -2,17 +2,6 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: 'milad test webhook'
 
-Parameters:
-  MyEnvironment:
-    Type: String
-    Default: testing
-    AllowedValues:
-      - testing
-      - staging
-      - prod
-    Description: Environemt of this stack
-
-
 Resources:
   miladTestWebhook:
     Type: 'AWS::Serverless::Function'
@@ -20,9 +9,11 @@ Resources:
       Runtime: go1.x
       Handler: main
       AutoPublishAlias: live
+      Tracing: Active
       DeploymentPreference:
         Type: AllAtOnce
       Environment:
         Variables:
           Env1: '{"REGION": "REGION_VALUE", "ENDPOINT": "http://SOME_ENDPOINT"}'
           Env2: test
+          MyEnvironment : stage
