@@ -3,7 +3,7 @@ version: 0.2
 # Declaration of environment variables
 env:
  variables:
-  CODE_BUILD_BUCKET: "codebuild-eu-west-1-104679706903-input-bucket"
+  CODE_BUILD_BUCKET: "codepipeline-us-east-1-398615444244"
             
 phases:
   build:
