@@ -2,6 +2,13 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: 'milad test webhook'
 
+# Parameters
+Parameters:
+  FunctionName:
+    Type: String
+    Description: Funciton Name
+    Default: my-deployment-bucket
+
 Resources:
   miladTestWebhook:
     Type: 'AWS::Serverless::Function'
@@ -15,5 +22,5 @@ Resources:
       Environment:
         Variables:
           Env1: '{"REGION": "REGION_VALUE", "ENDPOINT": "http://SOME_ENDPOINT"}'
-          Env2: test
+          Env2: !Ref 'FunctionName'
           MyEnvironment : stage
