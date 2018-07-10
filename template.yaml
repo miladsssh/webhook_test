@@ -10,7 +10,7 @@ Parameters:
     Default: my-deployment-bucket
 
 Resources:
-  miladTestWebhook-${AWS::Region}:
+  miladTestWebhook:
     Type: 'AWS::Serverless::Function'
     Properties:
       Runtime: go1.x
@@ -19,6 +19,10 @@ Resources:
       Tracing: Active
       DeploymentPreference:
         Type: AllAtOnce
+      Tags:
+        -
+          Key: Name
+          Value: TESTING
       Environment:
         Variables:
           Env1: '{"REGION": "REGION_VALUE", "ENDPOINT": "http://SOME_ENDPOINT"}'
