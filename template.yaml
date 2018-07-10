@@ -12,6 +12,8 @@ Parameters:
     Type: String
   UserEnv:
     Type: String
+  Delemeter:
+    Type: String
 
 Resources:
   miladTestWebhook:
@@ -37,7 +39,7 @@ Resources:
   DynamoDBTableProducts:
     Type: 'AWS::DynamoDB::Table'
     Properties:
-      TableName: !Join [ "_", [ "Products", !Ref Env]]
+      TableName: !Join [ !Ref Delemeter, [ "Products", !Ref Env]]
       AttributeDefinitions:
         - AttributeName: 'productId'
           AttributeType: 'S'

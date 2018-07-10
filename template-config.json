@@ -1,6 +1,7 @@
 {
   "Parameters" : {
-    "Env" : "",
+    "Delemeter" : "_",
+    "Env" : "dev",
     "UserEnv" : ""
   }
 }
