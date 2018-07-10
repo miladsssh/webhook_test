@@ -1,7 +1,6 @@
 {
   "Parameters" : {
-    "Delimiter" : "_",
-    "Env" : "dev",
+    "Env" : "_dev",
     "UserEnv" : ""
   }
 }

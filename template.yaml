@@ -35,12 +35,11 @@ Resources:
           MyEnvironment : stage
           USERENV: !Ref UserEnv
           ENV: !Ref Env
-          Delimiter: !Ref Delimiter
 
   DynamoDBTableProducts:
     Type: 'AWS::DynamoDB::Table'
     Properties:
-      TableName: !Join [ !Ref Delimiter, [ "Products", !Ref Env]]
+      TableName: !Join [ "", [ "Products", !Ref Env]]
       AttributeDefinitions:
         - AttributeName: 'productId'
           AttributeType: 'S'
