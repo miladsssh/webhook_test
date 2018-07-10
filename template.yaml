@@ -37,3 +37,17 @@ Resources:
           MyEnvironment : stage
           USERENV: !Ref UserEnv
           ENV: !Ref Env
+
+  DynamoDBTableProducts:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      TableName: !Join [ "", [ "Products", !Ref Env]]
+      AttributeDefinitions:
+        - AttributeName: 'productId'
+          AttributeType: 'S'
+      KeySchema:
+        - AttributeName: 'productId'
+          KeyType: 'HASH'
+      ProvisionedThroughput:
+        ReadCapacityUnits: 20
+        WriteCapacityUnits: 20
