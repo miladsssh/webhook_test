@@ -11,9 +11,9 @@ Parameters:
   Env:
     Type: String
     AllowedValues:
-    - dev
-    - tst
-    - prd
+    - _dev
+    - _tst
+    - _prd
   UserEnv:
     Type: String
 
