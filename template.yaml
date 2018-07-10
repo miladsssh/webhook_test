@@ -10,7 +10,7 @@ Parameters:
     Default: my-deployment-bucket
 
 Resources:
-  miladTestWebhook:
+  miladTestWebhook-${AWS::Region}:
     Type: 'AWS::Serverless::Function'
     Properties:
       Runtime: go1.x
