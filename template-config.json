@@ -1,6 +1,6 @@
 {
   "Parameters" : {
-    "Env" : "_dev",
+    "Env" : "",
     "UserEnv" : ""
   }
 }

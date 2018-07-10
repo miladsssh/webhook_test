@@ -11,9 +11,9 @@ Parameters:
   Env:
     Type: String
     AllowedValues:
-    - _dev
-    - _tst
-    - _prd
+    - dev
+    - tst
+    - prd
   UserEnv:
     Type: String
 
@@ -41,7 +41,7 @@ Resources:
   DynamoDBTableProducts:
     Type: 'AWS::DynamoDB::Table'
     Properties:
-      TableName: !Join [ "", [ "Products", !Ref Env]]
+      TableName: !Join [ "_", [ "Products", !Ref Env]]
       AttributeDefinitions:
         - AttributeName: 'productId'
           AttributeType: 'S'
