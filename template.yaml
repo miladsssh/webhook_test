@@ -20,6 +20,8 @@ Resources:
       FunctionName: !Join [ "", [ !Ref FunctionName, "-api-thing-get"]]
       DeploymentPreference:
         Type: AllAtOnce
+      Tags:
+        AppNameTag: !Ref AWS::Region
       Environment:
         Variables:
           Env1: '{"REGION": "REGION_VALUE", "ENDPOINT": "http://SOME_ENDPOINT"}'
