@@ -12,8 +12,6 @@ Parameters:
     Type: String
   UserEnv:
     Type: String
-  Delimiter:
-    Type: String
 
 Resources:
   miladTestWebhook:
