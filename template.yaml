@@ -17,12 +17,9 @@ Resources:
       Handler: main
       AutoPublishAlias: live
       Tracing: Active
+      FunctionName: !Join [ "", [ !Ref FunctionName, "-api-thing-get"]]
       DeploymentPreference:
         Type: AllAtOnce
-      Tags:
-        -
-          Key: Name
-          Value: TESTING
       Environment:
         Variables:
           Env1: '{"REGION": "REGION_VALUE", "ENDPOINT": "http://SOME_ENDPOINT"}'
