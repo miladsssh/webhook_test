@@ -15,4 +15,3 @@ artifacts:
   files:
     - template.yaml
     - outputTemplate.yaml
-    - template-config.json
