@@ -1,5 +1,5 @@
 {
   "Parameters" : {
-    "Env" : "_dev",
+    "Env" : "dev"
   }
 }
