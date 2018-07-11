@@ -20,7 +20,7 @@ Resources:
       Handler: main
       AutoPublishAlias: live
       Tracing: Active
-      FunctionName: !Join [ "_", [ !Ref FunctionName, !Ref Env]]
+      FunctionName: !Join [ "", [ !Ref FunctionName, !Ref Env]]
       DeploymentPreference:
         Type: AllAtOnce
       Tags:
