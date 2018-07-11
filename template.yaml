@@ -10,8 +10,7 @@ Parameters:
     Default: my-deployment-bucket
   Env:
     Type: String
-  UserEnv:
-    Type: String
+    Default: 'production'
 
 Resources:
   miladTestWebhook:
@@ -21,7 +20,7 @@ Resources:
       Handler: main
       AutoPublishAlias: live
       Tracing: Active
-      FunctionName: !Join [ "", [ !Ref FunctionName, "-api-thing-get"]]
+      FunctionName: !Join [ "_", [ !Ref FunctionName, !Ref Env]]
       DeploymentPreference:
         Type: AllAtOnce
       Tags:
@@ -31,7 +30,6 @@ Resources:
           Env1: '{"REGION": "REGION_VALUE", "ENDPOINT": "http://SOME_ENDPOINT"}'
           Env2: !Ref 'FunctionName'
           MyEnvironment : stage
-          USERENV: !Ref UserEnv
           ENV: !Ref Env
 
   DynamoDBTableProducts:
