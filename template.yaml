@@ -39,7 +39,7 @@ Resources:
   DynamoDBTableProducts:
     Type: 'AWS::DynamoDB::Table'
     Properties:
-      TableName: !Join [ "", [ "Products", !Ref Env]]
+      TableName: !Join [ "_", [ "Products", !Ref Env, !Ref PullRequest]]
       AttributeDefinitions:
         - AttributeName: 'productId'
           AttributeType: 'S'
