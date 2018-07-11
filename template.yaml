@@ -10,8 +10,6 @@ Parameters:
     Default: my-deployment-bucket
   Env:
     Type: String
-  UserEnv:
-    Type: String
 
 Resources:
   miladTestWebhook:
@@ -31,7 +29,6 @@ Resources:
           Env1: '{"REGION": "REGION_VALUE", "ENDPOINT": "http://SOME_ENDPOINT"}'
           Env2: !Ref 'FunctionName'
           MyEnvironment : stage
-          USERENV: !Ref UserEnv
           ENV: !Ref Env
 
   DynamoDBTableProducts:
