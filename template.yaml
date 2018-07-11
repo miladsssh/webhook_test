@@ -11,6 +11,10 @@ Parameters:
   Env:
     Type: String
     Default: 'production'
+  PullRequest:
+    Type: String
+    Default: ''
+
 
 Resources:
   miladTestWebhook:
@@ -20,7 +24,7 @@ Resources:
       Handler: main
       AutoPublishAlias: live
       Tracing: Active
-      FunctionName: !Join [ "", [ !Ref FunctionName, !Ref Env]]
+      FunctionName: !Join [ "_", [ !Ref FunctionName, !Ref Env, !Ref PullRequest]]
       DeploymentPreference:
         Type: AllAtOnce
       Tags:
